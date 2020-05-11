@@ -4,6 +4,10 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+    dataBinding {
+        enabled true
+    }
+
     defaultConfig {
         applicationId "com.example.myapplication"
         minSdkVersion 16
@@ -26,9 +30,24 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    // Java language implementation
+    //navigation框架
     implementation "androidx.navigation:navigation-fragment:$navigationVersion"
-    implementation "androidx.navigation:navigation-ui:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui:$rootProject.navigationVersion"
+    //materialDeign框架
+    implementation "com.google.android.material:material:$materialVersion"
+    //Room数据库框架
+    implementation "androidx.room:room-runtime:$roomVersion"
+    //Workmanager框架
+    implementation "androidx.work:work-runtime:$work_version"
+    //Gson框架
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+    //constraintlayout框架
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    //lide图片加载框架
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+
+
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     testImplementation 'junit:junit:4.12'
