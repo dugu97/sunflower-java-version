@@ -1,5 +1,7 @@
 package com.example.myapplication.data.repo;
 
+import android.os.AsyncTask;
+
 import androidx.lifecycle.LiveData;
 
 import com.example.myapplication.data.dao.GardenPlantingDao;
@@ -28,20 +30,25 @@ public class GardenPlantingRepository {
         return instance;
     }
 
-    Long createGardenPlanting(String plantId) {
-        GardenPlanting gardenPlanting = new GardenPlanting(plantId);
-        return gardenPlantingDao.insertGardenPlanting(gardenPlanting);
+    public void createGardenPlanting(final String plantId) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                GardenPlanting gardenPlanting = new GardenPlanting(plantId);
+                gardenPlantingDao.insertGardenPlanting(gardenPlanting);
+            }
+        });
     }
 
     void removeGardenPlanting(GardenPlanting gardenPlanting) {
         gardenPlantingDao.deleteGardenPlanting(gardenPlanting);
     }
 
-    LiveData<Boolean> isPlanted(String plantId) {
+    public LiveData<Boolean> isPlanted(String plantId) {
        return gardenPlantingDao.isPlanted(plantId);
     }
 
-    LiveData<List<PlantAndGardenPlantings>> getPlantedGardens() {
+    public LiveData<List<PlantAndGardenPlantings>> getPlantedGardens() {
         return gardenPlantingDao.getPlantedGardens();
     }
 }

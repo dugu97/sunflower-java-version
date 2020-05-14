@@ -24,4 +24,12 @@ public class PlantAndGardenPlantings {
     public List<GardenPlanting> getGardenPlantings() {
         return gardenPlantings;
     }
+
+    public void setPlant(Plant plant) {
+        this.plant = plant;
+    }
+
+    public void setGardenPlantings(List<GardenPlanting> gardenPlantings) {
+        this.gardenPlantings = gardenPlantings;
+    }
 }

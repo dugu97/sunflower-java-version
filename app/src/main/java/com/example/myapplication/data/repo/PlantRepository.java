@@ -27,15 +27,15 @@ public class PlantRepository {
         return instance;
     }
 
-    LiveData<List<Plant>> getPlants(){
+    public LiveData<List<Plant>> getPlants(){
        return plantDao.getPlants();
     }
 
-    LiveData<Plant> getPlant(String plantId){
+    public LiveData<Plant> getPlant(String plantId){
         return plantDao.getPlant(plantId);
     }
 
-    LiveData<List<Plant>> getPlantsWithGrowZoneNumber(int growZoneNumber){
+    public LiveData<List<Plant>> getPlantsWithGrowZoneNumber(int growZoneNumber){
         return plantDao.getPlantsWithGrowZoneNumber(growZoneNumber);
     }
 }

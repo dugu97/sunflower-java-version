@@ -22,6 +22,10 @@
     <data>
 
         <variable
+            name="viewModel"
+            type="com.example.myapplication.viewmodels.GardenPlantingListViewModel" />
+
+        <variable
                 name="hasPlantings"
                 type="boolean" />
 

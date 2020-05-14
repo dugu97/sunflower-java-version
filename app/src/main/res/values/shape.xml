@@ -21,4 +21,8 @@
 
     <!-- Add plant button -->
     <dimen name="button_corner_radius">12dp</dimen>
+
+    <style
+        name="ShapeAppearance.Sunflower.FAB"
+        parent="ShapeAppearance.MaterialComponents.SmallComponent" />
 </resources>

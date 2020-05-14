@@ -55,4 +55,20 @@ public class GardenPlanting {
     public Calendar getLastWateringDate() {
         return lastWateringDate;
     }
+
+    public void setGardenPlantingId(long gardenPlantingId) {
+        this.gardenPlantingId = gardenPlantingId;
+    }
+
+    public void setPlantId(String plantId) {
+        this.plantId = plantId;
+    }
+
+    public void setPlantDate(Calendar plantDate) {
+        this.plantDate = plantDate;
+    }
+
+    public void setLastWateringDate(Calendar lastWateringDate) {
+        this.lastWateringDate = lastWateringDate;
+    }
 }

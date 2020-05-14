@@ -15,13 +15,15 @@
 
     <style name="Theme.Sunflower" parent="Base.Theme.Sunflower"/>
 
+    <style name="Theme.Sunflower.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
 
-    <!--    &lt;!&ndash; Base application theme. &ndash;&gt;-->
-<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
-<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
-<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
-<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
-<!--        <item name="colorAccent">@color/colorAccent</item>-->
-<!--    </style>-->
+    <style name="Theme.Sunflower.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="TextAppearance.Sunflower.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5" >
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.example.myapplication.data.entity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -9,9 +10,9 @@ import java.util.Calendar;
 
 @Entity(tableName = "plants")
 public class Plant {
-
+    @NonNull
     @PrimaryKey @ColumnInfo(name = "id")
-    private String plantId;
+    private String plantId = "";
     private String name;
     private String description;
     private int growZoneNumber;
@@ -53,7 +54,44 @@ public class Plant {
         return wateringInterval;
     }
 
+    public void setPlantId(String plantId) {
+        this.plantId = plantId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setGrowZoneNumber(int growZoneNumber) {
+        this.growZoneNumber = growZoneNumber;
+    }
+
+    public void setWateringInterval(int wateringInterval) {
+        this.wateringInterval = wateringInterval;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+        if (obj instanceof Plant){
+            Plant plant = (Plant) obj;
+            if (this.getPlantId().equals(plant.plantId)){
+                return true;
+            }else {
+                return false;
+            }
+        }
+        return super.equals(obj);
     }
 }

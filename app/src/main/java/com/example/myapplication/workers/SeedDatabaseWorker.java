@@ -40,11 +40,10 @@ public class SeedDatabaseWorker extends Worker {
             List<Plant> plantList = gson.fromJson(jsonReader, type);
             AppDatabase database = AppDatabase.getInstance(getApplicationContext());
             database.plantDao().insertAll(plantList);
-            Result.success();
+            return Result.success();
         } catch (Exception ex) {
             Log.e(TAG, "Error seeding database", ex);
-            Result.failure();
+            return Result.failure();
         }
-        return null;
     }
 }

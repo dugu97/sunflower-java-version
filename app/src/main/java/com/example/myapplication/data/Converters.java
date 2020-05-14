@@ -6,12 +6,12 @@ import java.util.Calendar;
 
 public class Converters {
     @TypeConverter
-    Long calendarToDatestamp(Calendar calendar) {
+    public Long calendarToDatestamp(Calendar calendar) {
         return calendar.getTimeInMillis();
     }
 
     @TypeConverter
-    Calendar datestampToCalendar(Long value) {
+    public Calendar datestampToCalendar(Long value) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(value);
         return calendar;
