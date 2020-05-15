@@ -16,11 +16,11 @@ public class PlantAndGardenPlantingsViewModel {
     private Plant plant;
     private GardenPlanting gardenPlanting;
 
-    String waterDateString = dateFormat.format(gardenPlanting.getLastWateringDate().getTime());
+    String waterDateString;
     int wateringInterval;
     String imageUrl;
     String plantName;
-    String plantDateString = dateFormat.format(gardenPlanting.getPlantDate().getTime());
+    String plantDateString;
     String plantId;
 
     public PlantAndGardenPlantingsViewModel(PlantAndGardenPlantings plantings) {
@@ -28,6 +28,8 @@ public class PlantAndGardenPlantingsViewModel {
         this.plant = plantings.getPlant();
         this.gardenPlanting = plantings.getGardenPlantings().get(0);
         this.wateringInterval = plant.getWateringInterval();
+        this.waterDateString = dateFormat.format(gardenPlanting.getLastWateringDate().getTime());
+        this.plantDateString = dateFormat.format(gardenPlanting.getPlantDate().getTime());
         this.imageUrl = plant.getImageUrl();
         this.plantName = plant.getName();
         this.plantId = plant.getPlantId();

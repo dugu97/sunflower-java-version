@@ -19,6 +19,8 @@ import androidx.core.app.ShareCompat;
 import androidx.core.widget.NestedScrollView;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavArgs;
 import androidx.navigation.Navigation;
 
 import com.example.myapplication.data.entity.Plant;
@@ -34,11 +36,10 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class PlantDetailFragment extends Fragment {
 
-    private PlantDetailFragmentArgs args;
     private PlantDetailViewModelFactory factory;
 
 
-    private PlantDetailViewModel plantDetailViewModel = factory.create(PlantDetailViewModel.class);
+    private PlantDetailViewModel plantDetailViewModel;
 
     {
 //        factory = InjectorUtils.providePlantDetailViewModelFactory(requireActivity(), args.plantId);
@@ -49,6 +50,14 @@ public class PlantDetailFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final FragmentPlantDetailBinding binding = DataBindingUtil
             .inflate( inflater, R.layout.fragment_plant_detail, container, false);
+
+        String plantId = null;
+        if (getArguments() != null) {
+            plantId = PlantDetailFragmentArgs.fromBundle(getArguments()).getPlantId();
+        }
+
+        factory = InjectorUtils.providePlantDetailViewModelFactory(requireActivity(), plantId);
+        plantDetailViewModel = new ViewModelProvider(this, factory).get(PlantDetailViewModel.class);
 
         binding.setViewModel(plantDetailViewModel);
         binding.setLifecycleOwner(getViewLifecycleOwner());
@@ -93,11 +102,11 @@ public class PlantDetailFragment extends Fragment {
         binding.toolbar.setNavigationOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Navigation.findNavController(getActivity(), v.getId());
+                    Navigation.findNavController(v).navigateUp();
                 }
-            });
+        });
 
-            binding.toolbar.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+        binding.toolbar.setOnMenuItemClickListener(new OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
                     if (item.getItemId() ==  R.id.action_share){
@@ -106,7 +115,7 @@ public class PlantDetailFragment extends Fragment {
                     }
                     return false;
                 }
-            });
+        });
 
         setHasOptionsMenu(true);
 

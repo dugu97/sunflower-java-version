@@ -38,7 +38,7 @@ public class PlantListFragment extends Fragment {
         factory = InjectorUtils.providePlantListViewModelFactory(this);
         viewModel = new ViewModelProvider(this, factory).get(PlantListViewModel.class);
 
-        if (getContext() != null)
+        if (getContext() == null)
             return binding.getRoot();
 
         PlantAdapter adapter = new PlantAdapter();
