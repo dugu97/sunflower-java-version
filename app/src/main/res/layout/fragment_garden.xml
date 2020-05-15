@@ -23,7 +23,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.myapplication.viewmodels.GardenPlantingListViewModel" />
+            type="com.example.sunflower.viewmodels.GardenPlantingListViewModel" />
 
         <variable
                 name="hasPlantings"

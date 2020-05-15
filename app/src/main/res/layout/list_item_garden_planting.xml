@@ -24,10 +24,10 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="viewModel"
-            type="com.example.myapplication.viewmodels.PlantAndGardenPlantingsViewModel"/>
+            type="com.example.sunflower.viewmodels.PlantAndGardenPlantingsViewModel"/>
     </data>
 
-    <com.example.myapplication.views.MaskedCardView
+    <com.example.sunflower.views.MaskedCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/card_side_margin"
@@ -133,6 +133,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.example.myapplication.views.MaskedCardView>
+    </com.example.sunflower.views.MaskedCardView>
 
 </layout>

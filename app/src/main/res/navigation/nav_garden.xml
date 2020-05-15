@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/view_pager_fragment"
-        android:name="com.example.myapplication.HomeViewPagerFragment"
+        android:name="com.example.sunflower.HomeViewPagerFragment"
         tools:layout="@layout/fragment_view_pager">
 
         <action
@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/plant_detail_fragment"
-        android:name="com.example.myapplication.PlantDetailFragment"
+        android:name="com.example.sunflower.PlantDetailFragment"
         android:label="@string/plant_details_title"
         tools:layout="@layout/fragment_plant_detail">
         <argument

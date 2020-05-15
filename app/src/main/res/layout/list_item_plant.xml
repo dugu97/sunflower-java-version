@@ -24,10 +24,10 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="plant"
-            type="com.example.myapplication.data.entity.Plant"/>
+            type="com.example.sunflower.data.entity.Plant"/>
     </data>
 
-    <com.example.myapplication.views.MaskedCardView
+    <com.example.sunflower.views.MaskedCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/card_side_margin"
@@ -70,6 +70,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.example.myapplication.views.MaskedCardView>
+    </com.example.sunflower.views.MaskedCardView>
 
 </layout>
